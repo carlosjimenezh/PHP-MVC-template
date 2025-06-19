@@ -1,0 +1,59 @@
+RewriteEngine On
+
+# ----------------------------------------------------------------------
+
+# Log errors
+
+# ----------------------------------------------------------------------
+
+php_flag log_errors on
+php_value error_reporting 32767
+php_value error_log "error_log.txt"
+
+# ----------------------------------------------------------------------
+
+# End log errors
+
+# ----------------------------------------------------------------------
+
+Options +FollowSymLinks
+# evitar que las carpetas sin index sean listadas
+Options -Indexes
+
+
+ErrorDocument 404 /error-404
+ErrorDocument 500 /error-500
+ErrorDocument 502 /error-502
+ErrorDocument 504 /error-504
+
+# ----------------------------------------------------------------------
+
+# Rewrite rules
+
+# ----------------------------------------------------------------------
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# Formulario crear un nuevo elemento
+# RewriteRule ^([a-z\-\d]+)/create/?$ index.php?controller=$1&form=create [NC,L,QSA]
+
+
+# Formulario editar un elemento por id elemento
+# RewriteRule ^([a-z\-\d]+)/([\d]+)/edit/?$ index.php?controller=$1&id=$2&form=edit [NC,L,QSA]
+
+
+# Mostrar elemento por id (solo toma el ultimo dígito por id)
+RewriteRule ^([a-z\-0-9]+)/.*?([0-9]+)/?$ index.php?controller=$1&id=$2 [NC,L,QSA]
+
+
+# Redirigir todo a index.php
+RewriteRule ^([a-z\-\d]+)$ index.php?controller=$1 [NC,L,QSA]
+
+
+
+# ----------------------------------------------------------------------
+
+# End Rewrite rules
+
+# ----------------------------------------------------------------------

@@ -1,0 +1,24 @@
+/* Agregar las variables globales de color y tipografía aquí */
+
+
+:root {
+    /* fuentes */
+    --main-font: 'kollektif';
+
+    /* colores */
+    --font-color       : #333;
+    --primary-color    : #010101;
+    --secondary-color  : #990000;
+    --header-font-color: #fff;
+
+    /* tamaños */
+    --main-font-size  : 15px;
+    --header-font-size: 16px;
+    --footer-font-size: 20px;
+    --h1-font-size    : 25px;
+    --h2-font-size    : 18px;
+    --h3-font-size    : 16px;
+
+    /* margenes entre secciones */
+    --margin-sections: 50px 0;
+}

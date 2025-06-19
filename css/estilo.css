@@ -1,0 +1,233 @@
+@import url(root.css);
+@import url(fonts.css);
+@import url(common.css);
+
+* {
+	box-sizing     : border-box;
+	scroll-behavior: smooth;
+	scroll-margin  : 150px;
+	margin         : 0;
+	padding        : 0;
+}
+
+html,
+body {
+	min-height : 100%;
+	font-family: var(--main-font), system-ui, Arial, sans-serif;
+	font-weight: 400;
+	font-size  : var(--main-font-size);
+	color      : var(--font-color);
+}
+
+h1,
+h2,
+h3 {
+	font-family: var(--main-font), system-ui, Arial, sans-serif;
+	font-weight: bold;
+	margin     : 0;
+}
+
+h1 {
+	font-size: var(--h1-font-size);
+}
+
+h2 {
+	font-size: var(--h2-font-size);
+}
+
+h3 {
+	font-size: var(--h3-font-size);
+}
+
+ul li:not(:last-child) {
+	margin-bottom: 10px;
+}
+
+header {
+	color           : var(--header-font-color);
+	font-size       : var(--header-font-size);
+	background-color: var(--primary-color);
+}
+
+
+footer {
+	font-size: var(--footer-font-size);
+}
+
+table {
+	border-spacing: 0;
+	width         : 100%;
+}
+
+th,
+td {
+	padding        : 5px 0;
+	border-collapse: collapse;
+}
+
+hr {
+	border    : none;
+	border-top: #ccc solid 1px;
+	margin    : 20px auto;
+	width     : min(1000px, 95%);
+	margin-top: 100px;
+}
+
+section:not(#home section) {
+	padding: 0 10px;
+}
+
+section:not(#home section:first-of-type) {
+	margin: var(--margin-sections);
+}
+
+section:first-of-type:not(#home section:first-of-type) {
+	margin-top: 175px;
+}
+
+strong {
+	font-weight: bold;
+}
+
+img {
+	max-width: 100%;
+}
+
+button,
+button[type="button"],
+.btn {
+	border       : none;
+	padding      : 8px;
+	border-radius: 3px;
+	text-align   : center;
+	cursor       : pointer;
+	display      : inline-block;
+	color        : white;
+}
+
+button {
+	background-color: #343434;
+	width           : 100%;
+}
+
+button[type="button"],
+.btn {
+	background-color: #d8a430;
+	font-weight     : 600;
+	width           : min(170px, 100%);
+}
+
+a {
+	text-decoration: none
+}
+
+a>svg,
+span>svg {
+	vertical-align: middle;
+	height        : 100%;
+	width         : 100%;
+}
+
+input:-webkit-autofill {
+	background-color  : white !important;
+	-webkit-box-shadow: 0 0 0 1000px white inset !important;
+	box-shadow        : 0 0 0 1000px white inset !important;
+	color             : black !important;
+}
+
+input,
+textarea {
+	display: block;
+	padding: 7px 10px;
+	width  : 100%;
+}
+
+input.invalid,
+textarea.invalid {
+	border          : 2px solid red;
+	background-color: #ffe6e6;
+}
+
+input:focus {
+	/* background-color   : white; */
+	outline         : none;
+	border-radius   : 3px;
+	/* border       : 2px solid black; */
+}
+
+input:focus.invalid {
+	outline: none;
+	border : 2px solid red
+}
+
+label {
+	display: block;
+}
+
+label:not(:first-of-type) {
+	margin: 25px 0;
+}
+
+
+.contenido {
+	max-width: 1250px;
+	margin   : auto;
+	padding  : 15px;
+	position : relative;
+}
+
+.loader {
+	border-radius   : 50%;
+	border          : 3px solid black;
+	border-top-color: transparent;
+	animation       : spin 1.2s linear infinite;
+	height          : 50px;
+	width           : 50px;
+	position        : absolute;
+	top             : 0;
+	bottom          : 0;
+	right           : 0;
+	left            : 0;
+	margin          : auto;
+}
+
+
+#pages {
+	margin-top: 50px;
+}
+
+#pages .active {
+	color: #990000;
+}
+
+#collapsing-menu {
+	background-color: var(--primary-color);
+	padding         : 15px;
+	padding-top     : 130px;
+}
+
+#collapsing-menu div {
+	padding: 10px;
+}
+
+#collapsing-menu div:first-of-type {
+	padding-top: 0;
+}
+
+#collapsing-menu div:last-of-type {
+	padding-bottom: 0;
+}
+
+
+@media only screen and (min-width:601px) {}
+
+@media screen and ((min-width: 600px) and (max-width: 950px)) {}
+
+@media only screen and (max-width:600px) {}
+
+
+@keyframes spin {
+	to {
+		transform: rotate(360deg)
+	}
+}

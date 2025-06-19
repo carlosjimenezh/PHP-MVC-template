@@ -1,0 +1,34 @@
+RewriteEngine On
+
+
+# Log errors
+
+# ----------------------------------------------------------------------
+
+php_flag log_errors on
+php_value error_reporting 32767
+php_value error_log "error_log.txt"
+
+# ----------------------------------------------------------------------
+
+
+Options +FollowSymLinks
+# evitar que las carpetas sin index sean listadas
+Options -Indexes
+
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+
+# Realizar acción por id elemento
+RewriteRule ^([a-z\-\d]+)/([\d]+)/?$ index.php?controller=$1&id=$2 [NC,L,QSA]
+
+
+# Redirigir todo a index.php
+RewriteRule ^([a-z\-\d]+)/?$ index.php?controller=$1 [QSA,L,QSA]
+
+
+
+# ?page=2 - para ir a la página dos de los elementos buscados
+# ?limit=2 - para limitar los elementos buscados a 2 elementos

@@ -1,0 +1,134 @@
+.relative {
+    position: relative
+}
+
+.absolute {
+    position: absolute;
+}
+
+.absolute.center {
+    top      : 50%;
+    left     : 50%;
+    transform: translate(-50%, -50%);
+}
+
+.absolute.right-bottom {
+    bottom: 0;
+    right : 0;
+}
+
+.absolute.right-top {
+    top  : 0;
+    right: 0
+}
+
+.absolute.center-bottom {
+    bottom   : 0;
+    left     : 50%;
+    transform: translate(-50%, 0);
+}
+
+.absolute.center-top {
+    top      : 0;
+    left     : 50%;
+    transform: translate(-50%, 0);
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.fixed {
+    position: fixed;
+}
+
+.fixed.top {
+    top    : 0;
+    left   : 0;
+    right  : 0;
+    z-index: 99;
+}
+
+
+.flex {
+    display        : flex;
+    gap            : 50px;
+    justify-content: center;
+    align-items    : center;
+}
+
+.flex.space-between {
+    justify-content: space-between;
+}
+
+.grid {
+    display                 : grid;
+    /* grid-template-columns: repeat(auto-fit,minmax(300px,1fr)); */
+    grid-template-columns   : repeat(3, 1fr);
+    gap                     : 30px;
+}
+
+.g-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.g-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.g-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.icon>svg {
+    vertical-align: text-bottom;
+}
+
+
+.img-wrapper>img,
+.img-wrapper>a>img,
+.img-wrapper>iframe {
+    object-fit     : cover;
+    object-position: center;
+    width          : 100%;
+    height         : 100%;
+    /* position    : absolute; */
+}
+
+
+.font-white {
+    color: white;
+}
+
+.center-small {
+    text-align: center !important
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+@media only screen and (min-width:601px) {}
+
+@media screen and ((min-width: 600px) and (max-width: 950px)) {}
+
+@media only screen and (max-width:600px) {
+    .grid {
+        gap: 100px;
+    }
+
+    .grid,
+    .g-4,
+    .g-3,
+    .g-2 {
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
+
+    .hide-small {
+        display: none
+    }
+}
