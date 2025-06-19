@@ -44,7 +44,7 @@
 <link rel="stylesheet" href="css/estilo.css">
 
 <!-- biblioteca de notificaciones -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body id="<?php echo $section ?>">
     
