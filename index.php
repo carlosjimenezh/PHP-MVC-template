@@ -16,7 +16,17 @@
 	// ----------------- llamadas a un controlador ----------------
 	if(isset($_GET['controller']) && !empty($_GET['controller']))
 	{
-		$controlador = kebapCaseToCamelCase($_GET['controller']);
+		//rutas que redirigen a un controlador, para evitar cambiar el nombre del controlador
+		$rutas = [
+			// 'inicio' => 'home',
+			// nombre-de-la-ruta => controlador-al-que-es-dirigido
+		];
+
+		if (array_key_exists($_GET['controller'], $rutas)) {
+			$controlador = kebapCaseToCamelCase($rutas[$_GET['controller']]);
+		} else {	
+			$controlador = kebapCaseToCamelCase($_GET['controller']);
+		}
 
 		if(file_exists(RUTA_CONTROLLER_DIR.'/' . $controlador . RUTA_CONTROLLER_DIR_DEFAULT))
 		{
