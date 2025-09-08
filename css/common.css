@@ -91,7 +91,8 @@
 
 .img-wrapper>img,
 .img-wrapper>a>img,
-.img-wrapper>iframe {
+.img-wrapper>iframe,
+.img-wrapper>video {
     object-fit     : cover;
     object-position: center;
     width          : 100%;

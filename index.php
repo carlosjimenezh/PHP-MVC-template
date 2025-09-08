@@ -1,6 +1,8 @@
 <?php
 	session_start();
 	date_default_timezone_set("America/Mexico_City");
+	mb_internal_encoding("UTF-8");
+	mb_http_output("UTF-8");
 
 	//llamar variables globales
 	require_once('./core/core.php');

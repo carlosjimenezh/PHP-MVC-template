@@ -1,0 +1,255 @@
+@import url(root.css);
+@import url(common.css);
+* {
+	box-sizing     : border-box;
+	scroll-behavior: smooth;
+	scroll-margin  : 150px;
+	margin         : 0;
+	padding        : 0;
+}
+
+html,
+body {
+	min-height : 100%;
+	font-family: Arial, sans-serif;
+	font-weight: 400;
+	font-size  : 14px;
+	color      : #333;
+}
+
+a {
+  text-decoration: none
+}
+
+h1,
+h2,
+h3 {
+	font-family: Arial, sans-serif;
+	font-weight: 600;
+  color: #000;
+	margin     : 0;
+  margin-bottom: 40px;
+  line-height: 1.3em;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+.contenido {
+	max-width: var(--contenido);
+	margin   : auto;
+	padding  : 15px;
+	/* position : relative; */
+}
+
+header {
+  background-color: var(--primary-color);
+  color: white
+}
+
+nav.admin {
+	background-color          : var(--secondary-color);
+	color                     : white;
+	border-bottom-left-radius : 10px;
+	border-bottom-right-radius: 10px;
+}
+
+#admin main {
+	margin : 50px 0 100px;
+	padding: 0 10px;
+}
+
+#admin main>.contenido {
+	border-radius     : 10px;
+	padding           : 0;
+	box-shadow        : 5px 6px 11px 0px rgba(0, 0, 0, 0.4);
+	-webkit-box-shadow: 5px 6px 11px 0px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow   : 5px 6px 11px 0px rgba(0, 0, 0, 0.4);
+}
+
+#admin main .contenido h1 {
+	background-color       : var(--primary-color);
+	color                  : white;
+	border-top-left-radius : 10px;
+	border-top-right-radius: 10px;
+}
+
+#admin #pages {
+	margin: 30px 0
+}
+
+#admin table {
+	border-spacing: 0;
+	width         : 100%;
+	border        : 1px solid #ccc;
+	border-radius : 5px;
+}
+
+#admin tr:nth-child(odd):not(thead tr:first-child) {
+	background-color: #eee;
+}
+
+#admin tr:nth-child(even) {
+	background-color: #e4e4e4;
+}
+
+#admin th, #admin td {
+	padding        : 5px;
+	border-collapse: collapse;
+}
+
+#admin th {
+	text-align    : left;
+	padding-bottom: 10px;
+}
+
+hr {
+	border    : none;
+	border-top: #ccc solid 2px;
+	margin    : 20px auto;
+	width     : min(1000px, 95%);
+	margin-top: 100px;
+}
+
+table {
+	border-spacing: 0;
+	width         : 100%;
+}
+
+th,
+td{
+	padding        : 5px 0;
+	border-collapse: collapse;
+}
+
+hr {
+	border    : none;
+	border-top: #ccc solid 1px;
+	margin    : 20px auto;
+	width     : min(1000px, 95%);
+	margin-top: 100px;
+}
+
+.error {
+  font-size: 12px;
+  color: red;
+  font-weight: bold;
+}
+
+
+input:-webkit-autofill {
+	background-color  : white !important;
+	-webkit-box-shadow: 0 0 0 1000px white inset !important;
+	box-shadow        : 0 0 0 1000px white inset !important;
+	color             : black !important;
+}
+
+label, .img {
+  font-weight: bold;
+}
+
+input,
+textarea {
+	display: block;
+	padding: 7px 10px;
+	width  : 100%;
+  border-radius: 0;
+  border: 1px solid #333;
+  font-weight: 400;
+}
+
+input.invalid,
+textarea.invalid {
+	border          : 2px solid red;
+	background-color: #ffe6e6;
+}
+
+input:focus {
+	outline         : none;
+	border-radius   : 0;
+}
+
+input:focus.invalid {
+	outline: none;
+	border : 2px solid red
+}
+
+label {
+	display: block;
+}
+
+label:not(:first-of-type) {
+	margin: 25px 0;
+}
+
+section {
+	margin: 100px 0;
+}
+
+section:first-of-type {
+    margin-top: 175px;
+}
+
+.logo {
+  width: 200px;
+  max-width: 100%;
+}
+
+button, button[type="button"], .btn {
+    border: none;
+    padding: 8px 15px;
+    border-radius: 3px;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+    color: white;
+    transition: all 0.1s ease-in-out;
+}
+
+#login button {
+  width: 100%;
+}
+
+#login .contenido {
+  margin: auto
+}
+
+.btn-dark, button[type="button"], button {
+  background-color: var(--primary-btn-color);
+  border: none
+}
+
+.btn, .btn-dark, .back {
+  margin-top: 50px;
+  font-weight: 700;
+  transition: all 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.btn-dark:hover, button[type="button"]:hover, button:hover {
+  outline: 3px solid #262626;
+  outline-offset: -3px;
+}
+
+
+.btn:hover, .btn-dark:hover, button[type="button"]:hover, button:hover {
+  background-color: white;
+  color: #262626
+}
+
+button[type="button"] {
+  min-width: 70px
+}
+
+div[aria-labelledby="swal2-title"] {
+  border-radius: 0;
+}
+
+.swal2-cancel {
+  background-color: red!important
+}

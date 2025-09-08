@@ -15,7 +15,7 @@
     if ($prod === true) {
         define('BASE_URL', 'https://crateronfire.com.mx/pruebas/estereo-visual/');
     } else {
-        define('BASE_URL', 'http://localhost/estereo_visual/');
+        define('BASE_URL', 'http://localhost/base/');
     }
     define('WEBSITE_DESCRIPTION', '');
     define('WEBSITE_KEYWORDS', '');
@@ -43,7 +43,7 @@
         define('DB_ADMIN_USER', '');
         define('DB_ADMIN_PASS', '');
     } else {
-        define('DB_NAME', 'estereo_visual');
+        define('DB_NAME', 'estereo_visual'); //base de datos de pruebas
         define('DB_USER', 'root');
         define('DB_PASS', '');
         define('DB_ADMIN_USER', 'root');

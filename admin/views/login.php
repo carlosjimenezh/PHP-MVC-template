@@ -18,10 +18,14 @@
         <div class="w3-row w3-round w3-padding">
         <br>
             <form id="formLogin" name="login" method="post">
-                <input type="text" name="nm" placeholder="User" maxlength="20" required>
-                <br>
-                <input type="password" name="ps" placeholder="Password" maxlength="20" required>
-                <br>
+                <label for="user">
+                    <input id="user" type="text" name="nm" placeholder="User">
+                    <p class="error w3-hide absolute">4-20 Letters and numbers</p>
+                </label>
+                <label for="pass">
+                    <input id="pass" type="password" name="ps" placeholder="Password">
+                    <p class="error w3-hide absolute">8 or more characters</p>
+                </label>
                 <button>Login</button>
             </form>
         </div>
@@ -29,11 +33,22 @@
 </section>
 
 <script type="module">
-    import { validarFormulario } from './js/forms.js'
+    import { validarInput } from './js/forms.js'
     const form = document.querySelector('#formLogin')
+    const user = document.querySelector('#user')
+    const pass = document.querySelector('#pass')
+
+
     form.addEventListener('submit', (e) => {
         e.preventDefault()
-        if (validarFormulario(form)) {
+
+        //validar inputs
+        const userValido = validarInput(user, /^[a-zA-Z0-9_]{4,20}$/);
+        const passValido = validarInput(pass, /^.{8,}$/);
+
+        const formularioValido = userValido && passValido 
+
+        if (formularioValido) {
             Swal.fire({
                 title: "Loading...",
                 text: "Please wait a moment",

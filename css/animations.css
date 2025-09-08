@@ -1,0 +1,167 @@
+[data-animation="show"],
+[data-animation="show-hide"],
+[data-animation="up"],
+[data-animation="down"],
+[data-animation="left"],
+[data-animation="right"],
+[data-animation="zoom-in"],
+[data-animation="left"],
+[data-animation="right"] {
+  opacity: 0;
+}
+
+.animate_show {
+  animation: show 0.6s ease-out forwards;
+}
+
+.animate_hide {
+  animation: hide 0.6s ease-out forwards;
+}
+
+.animate_left {
+  animation: left 0.6s ease-out forwards;
+}
+
+.animate_right {
+  animation: right 0.6s ease-out forwards;
+}
+
+.animate_show-hide {
+  animation: show-hide 3s ease-in-out forwards;
+}
+
+.animate_zoom-in {
+  animation: zoom-in 0.4s ease-out forwards;
+  transform-origin: center;
+  width: max-content;
+}
+
+.animate_zoom-out {
+  animation: zoom-out 0.4s ease-out forwards;
+  transform-origin: center;
+  width: max-content;
+}
+
+.animate_down {
+  animation: down 0.6s ease-out forwards;
+}
+
+.animate_up {
+  animation: up 0.6s ease-out forwards;
+}
+
+@keyframes zoom-in {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes zoom-out {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes down {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes up {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+    /* transform: translateY(20px); */
+  }
+
+  to {
+    opacity: 1;
+    /* transform: translateY(0); */
+  }
+}
+
+@keyframes right {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes left {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes hide {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes show-hide {
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+[data-animation] {
+  animation-delay: 0.4s;
+}

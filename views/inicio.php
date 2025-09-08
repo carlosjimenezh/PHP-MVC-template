@@ -18,17 +18,17 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-	//solicitud GET de productos
-	fetch('api/productos')
+	//solicitud GET de proyectos
+	fetch('api/proyectos')
 	.then(response => {
 		if (response.ok) return response.json()
 	})
 	.then(data => {
-		console.log('Solicitud GET de productos')
+		console.log('Solicitud GET de proyectos')
 		console.log(data)
 	})
 
-	//solicitud POST de productos 
+	//solicitud POST de proyectos 
 	const formData = new FormData();
 	formData.append("username", "Chris");
 	formData.append("age", 20);
@@ -36,17 +36,17 @@ document.addEventListener('DOMContentLoaded', () => {
 		method: 'POST',
 		body: formData,
 	}
-	fetch('api/productos', options)
+	fetch('api/proyectos', options)
 	.then(response => {
 		if (response.ok) return response.json()
 	})
 	.then(data => {
-		console.log('Solicitud POST de productos para crear un producto, solo devuelve los valores')
+		console.log('Solicitud POST de proyectos para crear un proyecto, solo devuelve los valores')
 		console.log(data)
 	})
 
 
-	//solicitud PUT de productos para  
+	//solicitud PUT de proyectos para  
 	const params = new URLSearchParams();
 	params.append("username", "Chris martines");
 	params.append("age", 20);
@@ -57,26 +57,26 @@ document.addEventListener('DOMContentLoaded', () => {
 		},
 		body: params
 	}
-	fetch('api/productos/1', optionsPut)
+	fetch('api/proyectos/1', optionsPut)
 	.then(response => {
 		if (response.ok) return response.json()
 	})
 	.then(data => {
-		console.log('Solicitud PUT de productos para crear un producto, solo devuelve los valores')
+		console.log('Solicitud PUT de proyectos para crear un proyecto, solo devuelve los valores')
 		console.log(data)
 	})
 
 
-	//solicitud DELETE de productos para eliminar un producto
+	//solicitud DELETE de proyectos para eliminar un proyecto
 	const optionsDel = {
 		method: 'delete',
 	}
-	fetch('api/productos/1', optionsDel)
+	fetch('api/proyectos/1', optionsDel)
 	.then(response => {
 		if (response.ok) return response.json()
 	})
 	.then(data => {
-		console.log('Solicitud DELETE de productos para eliminar un producto, solo devuelve los valores')
+		console.log('Solicitud DELETE de proyectos para eliminar un proyecto, solo devuelve los valores')
 		console.log(data)
 	})
 
