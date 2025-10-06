@@ -50,6 +50,9 @@
         define('DB_ADMIN_PASS', '');
     }
     
+    // ------------- ADMIN -------------
+    define('USER', 'SocalAdm');
+    define('PASS', 'lk430/.,4s@-');
 
 
     
